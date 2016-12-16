@@ -1,0 +1,67 @@
+User.create(name: "Fernando Altuzar", email: "altuzar@gmail.com", password: "lucasfilm", password_confirmation: "lucasfilm").save
+
+rsync -vzr --progress config/locales/ root@192.241.238.168:/home/rails/config/locales
+
+User
+email
+name
+sex
+
+rails g scaffold Ride origin:string destination:string when:datetime round:boolean when_round:datetime has_car:boolean share_taxi:boolean pink:boolean description:text user_id:integer
+
+Tablas:
+
+rails g scaffold Employee netNumber:string name:string position:string area:string
+
+rails g scaffold Equipment brand:string model:string
+rails g scaffold Phone brand:string model:string
+rails g scaffold Line brand:string model:string
+
+rails g scaffold Equipment brand:string model:string
+rails g scaffold Device brand:string model:string
+rails g scaffold Machine brand:string model:string
+
+rails g scaffold Location location:string
+
+rails g scaffold Article type_ident:integer model_ident:integer unique_num:string account_num:string location_id:integer current_owner:integer last_owner:integer status:string status_date:date contract_start:date contract_end:date notes:text
+
+employee:
+	id
+	netNumber:string # aa303030
+	name:string	# JUAN X
+	position:string # CORP Legal # ***
+	area:string # Legal
+
+articles
+	id
+	type_ident # MACHINE, PHONE, LINE
+	model_ident
+	uniqueNumber # SERIALNO or IMEI or TELNUMBER
+	accountNumber # Cuenta (solo lineas)
+	location_id # id de DF, MTY, GDL, etc.
+	currentOwner
+	lastOwner
+	status # Asignado, Por Asignar, GSI, Reparacion, Robada
+	statusDate
+	contractStartDate # solo lineas
+	contractEndDate # solo lineas
+	notes
+
+Machine
+	id
+	brand # HP, APPLE, EPSON
+	model # HP6910p, MB32443L
+
+phones
+	id
+	brand # SAMSUNG O NOKIA O HUAWEI
+	model # GALAXY SIII O NOKIA 800
+
+lines
+	id
+	brand # IUSACELL o NEXTEL o TELCEL
+	model # NOMBRE DEL PLAN
+
+locations
+	id
+	location # DF, GDL, MTY, MOR, SLP
